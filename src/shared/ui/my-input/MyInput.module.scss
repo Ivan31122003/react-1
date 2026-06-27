@@ -1,0 +1,32 @@
+.my-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.my-input {
+  margin-bottom: 8px;
+  padding: 16px;
+  font-size: 16px;
+  border: 2px solid var(--color-dark);
+  box-shadow: 4px 4px 0 0 var(--color-dark);
+  border-radius: 0;
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+  transition: all 0.1s ease;
+
+  &:hover {
+    box-shadow: 6px 6px 0 0 var(--color-dark);
+  }
+
+  &:focus {
+    outline: none;
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0 0 var(--color-dark);
+  }
+}
+
+.my-input-label {
+  font-size: 16px;
+  font-weight: 600;
+}
