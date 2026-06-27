@@ -5,4 +5,6 @@ export type UserPersonalData = {
   number: string;
   email: string;
   position: string;
+  salary: number;
+  schedule: string;
 };

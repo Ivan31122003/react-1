@@ -2,7 +2,16 @@ import { useState } from 'react';
 import type { UserPersonalData } from '@/entities/hero';
 
 export function usePersonalData(
-  initial: UserPersonalData = { name: '', secondName: '', thirdName: '', number: '', email: '', position: '' },
+  initial: UserPersonalData = {
+    name: '',
+    secondName: '',
+    thirdName: '',
+    number: '',
+    email: '',
+    position: '',
+    salary: 0,
+    schedule: '',
+  },
 ) {
   const [data, setData] = useState(initial);
   const setName = (name: string) => setData((prev) => ({ ...prev, name }));
@@ -10,9 +19,25 @@ export function usePersonalData(
     setData((prev) => ({ ...prev, secondName }));
   const setThirdName = (thirdName: string) =>
     setData((prev) => ({ ...prev, thirdName }));
-  const setNumber = (number: string) => setData((prev) => ({ ...prev, number }));
+  const setNumber = (number: string) =>
+    setData((prev) => ({ ...prev, number }));
   const setEmail = (email: string) => setData((prev) => ({ ...prev, email }));
-  const setPosition = (position: string) => setData((prev) => ({ ...prev, position }));
+  const setPosition = (position: string) =>
+    setData((prev) => ({ ...prev, position }));
+  const setSalary = (salary: number) =>
+    setData((prev) => ({ ...prev, salary }));
+  const setSchedule = (schedule: string) =>
+    setData((prev) => ({ ...prev, schedule }));
 
-  return { data, setName, setSecondName, setThirdName, setNumber, setEmail, setPosition };
+  return {
+    data,
+    setName,
+    setSecondName,
+    setThirdName,
+    setNumber,
+    setEmail,
+    setPosition,
+    setSalary,
+    setSchedule,
+  };
 }

@@ -1,9 +1,20 @@
 import { MyInput } from '@/shared/ui/my-input';
+import { MySelect } from '@/shared/ui/my-select';
 import { usePersonalData } from '@/features/edit-personal-data';
 import classes from './PersonalDataForm.module.scss';
 
 export function PersonalDataForm() {
-  const { data, setName, setSecondName, setThirdName, setNumber, setEmail, setPosition } = usePersonalData();
+  const {
+    data,
+    setName,
+    setSecondName,
+    setThirdName,
+    setNumber,
+    setEmail,
+    setPosition,
+    setSalary,
+    setSchedule,
+  } = usePersonalData();
 
   return (
     <div className={classes.personalDataForm}>
@@ -34,11 +45,27 @@ export function PersonalDataForm() {
         value={data.email}
         onChange={(e) => setEmail(e.target.value)}
       />
+      <span />
       <MyInput
         label="Должность"
         value={data.position}
         onChange={(e) => setPosition(e.target.value)}
       />
+      <MyInput
+        label="Зарплата"
+        type="number"
+        value={data.salary}
+        onChange={(e) => setSalary(Number(e.target.value))}
+      />
+      <MySelect
+        label="График работы"
+        value={data.schedule}
+        onChange={(e) => setSchedule(e.target.value)}
+      >
+        <option value="Полный день">Полный день</option>
+        <option value="Неполный день">Неполный день</option>
+        <option value="Удалённая работа">Удалённая работа</option>
+      </MySelect>
     </div>
   );
 }

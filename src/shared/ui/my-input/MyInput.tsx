@@ -8,7 +8,9 @@ export function MyInput({
 } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div className={classes.myInputContainer}>
-      <label htmlFor={label} className={classes.myInputLabel}>{label}</label>
+      <label htmlFor={label} className={classes.myInputLabel}>
+        {label}
+      </label>
       <input id={label} {...props} className={classes.myInput} />
     </div>
   );

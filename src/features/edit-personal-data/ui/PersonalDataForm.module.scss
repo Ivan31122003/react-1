@@ -2,9 +2,5 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-
-  > :nth-child(6) {
-    grid-column: 1;   // 1-й столбец
-    grid-row: 3;      // 3-я строка
-  }
+  grid-auto-flow: dense;
 }
